@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block nav %}<nav><button type="button" class="button button-secondary" id="logout-button">Se déconnecter</button></nav>{% endblock %}
+{% block content %}
+<h1>Tableau de bord</h1>
+<p class="form-message" id="dashboard-message" role="alert"></p>
+
+<section class="card">
+  <h2>Profil</h2>
+  <dl class="profile">
+    <dt>Nom</dt><dd id="profile-name">Chargement...</dd>
+    <dt>Email</dt><dd id="profile-email">Chargement...</dd>
+    <dt>Identifiant</dt><dd id="profile-id">Chargement...</dd>
+    <dt>Membre depuis</dt><dd id="profile-created">Chargement...</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <h2>Ressource protégée</h2>
+  <p>Réponse de <code>GET /api/v1/protected</code> :</p>
+  <p id="protected-message">Chargement...</p>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', path='js/dashboard.js') }}"></script>{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block nav %}<nav><a href="/register">Inscription</a></nav>{% endblock %}
+{% block content %}
+<section class="card card-narrow">
+  <h1>Connexion</h1>
+  <form id="login-form" novalidate>
+    <div class="field">
+      <label for="email">Adresse email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+      <p class="field-error" id="error-email" role="alert"></p>
+    </div>
+    <div class="field">
+      <label for="password">Mot de passe</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <p class="field-error" id="error-password" role="alert"></p>
+    </div>
+    <p class="form-message" id="form-message" role="alert"></p>
+    <button type="submit" class="button">Se connecter</button>
+  </form>
+  <p class="alt-link">Pas encore de compte ? <a href="/register">Créer un compte</a></p>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', path='js/auth-forms.js') }}"></script>{% endblock %}
